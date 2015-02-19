@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="#f0f9b6"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+         android:stretchColumns="2">
+
+        <TableRow
+            android:id="@+id/row"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Single Silver Life Care"
+                android:textColor="#ff3300"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dip"
+            android:background="#ff3300" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </TableRow>
+        <TableRow>
+        	
+        </TableRow>
+    </TableLayout> 
+        
+    <ImageView
+        android:id="@+id/normalI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/normalMode"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/normal_1" />
+
+    <Button
+        android:id="@+id/download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/onoff" />
+
+    <TextView
+        android:id="@+id/statusDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/download"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ff3300" />
+
+    <TextView
+        android:id="@+id/outMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/outsideI"
+        android:layout_below="@+id/normalI"
+        android:layout_marginRight="22dp"
+        android:text="외출"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/sleepI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sleepMode"
+        android:layout_toLeftOf="@+id/download"
+        android:src="@drawable/sleep_1" />
+
+    <TextView
+        android:id="@+id/normalMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/table"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="평상시"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/outsideI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/sleepI"
+        android:layout_toRightOf="@+id/download"
+        android:src="@drawable/goout_1" />
+
+    <TextView
+        android:id="@+id/sleepMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/outMode"
+        android:layout_alignBottom="@+id/outMode"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/normalI"
+        android:text="취침"
+        android:textSize="20dp" />
+    
+</RelativeLayout>
