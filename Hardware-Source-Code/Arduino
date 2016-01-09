@@ -12,8 +12,10 @@ int led3 = 3;
 byte sensorPin = 2;
 byte indicator = 13;
 byte state;
-char ssid[] = "AndroidHotspot A840S(6411)";    //  your network SSID (name) 
-char pass[] = "64116411";   // your network password
+// network SSID
+char ssid[] = "AndroidHotspot A840S(6411)";    
+// network password
+char pass[] = "64116411";   
 int keyIndex = 0;              
 int status = WL_IDLE_STATUS;
 WiFiServer server(80);
