@@ -51,7 +51,7 @@ void checkTheAlarmTime(int alarmHour, int alarmMinute) {
 }
 
 void setup() {                   
-  lcd.begin(16,2);         //LCD 크기 지정, 2줄 16칸
+  lcd.begin(16,2);         //LCD크기 지정, 2줄 16칸
   lcd.clear();             //화면 초기화
   
   rtc.stopRTC();           //정지
