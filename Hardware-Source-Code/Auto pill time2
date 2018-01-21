@@ -1,0 +1,60 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <DS1302.h>
+
+LiquidCrystal_I2C lcd(0x27,16,2);   // Init the LCD 16x2
+DS1302 rtc(8, 7, 6);                // Init the DS1302
+Time t;                             // Init a Time-data structure
+
+char *WEEK[8] = {"","MON","TUE","WED","THU","FRI","SAT","SUN"};
+char *HH[2] = {"AM ","PM "};
+
+byte heart[8] = { B00000, B01010, B11111, B11111, B01110, B00100, B00000, B00000};
+
+void setup()
+{
+    lcd.init(); // initialize the lcd 
+    lcd.backlight(); // LCD Backlight on
+    lcd.createChar(0, heart); //heart icon
+    
+    // Set the clock to run-mode, and disable the write protection
+    rtc.halt(false);
+    rtc.writeProtect(false);
+    
+    
+    Serial.begin(9600);   // Setup Serial connection
+    
+    
+    // 최초구동시 이 명령을 구동하여 현재시간과 날짜를 넣어주도록 합니다.
+    // 이후에는 지우시고    rtc.writeProtect(false); 를 true로 바꿔주면 됩니다.
+    //  The following lines can be commented out to use the values already stored in the DS1302
+    // rtc.setDOW(THURSDAY);       // Set Day-of-Week to FRIDAY
+    // rtc.setTime(00, 59, 0);     // Set the time to 12:00:00 (24hr format)
+    // rtc.setDate(24, 3, 2016);   // Set the date to August 6th, 2010 
+}
+
+
+void loop()
+{
+    t = rtc.getTime(); // Get data from the DS1302
+    
+    // Send Day-of-Week 
+    lcd.setCursor(0, 0);
+    lcd.write(0); 
+    lcd.print(t.year, DEC);  
+    lcd.print("-"); 
+    int abc = (t.mon);  
+    if(abc < 10)
+    {    
+        lcd.print("0"); 
+        }  
+        lcd.print(t.mon, DEC); 
+        lcd.print("-");
+  lcd.write(0);
+
+
+
+
+
+
+    
